@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nandu Kutty 💖</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #0f2027, #203a43, #000000);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  background: linear-gradient(45deg, #00f5ff, #ff00c8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* button */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #00f5ff, #ff00c8);
+  color: white;
+  cursor: pointer;
+}
+
+/* message */
+#messageBox {
+  display: none;
+  margin-top: 25px;
+  font-size: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* love section */
+#loveSection {
+  display: none;
+  margin-top: 20px;
+}
+
+/* hearts */
+.heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: floatUp 5s linear infinite;
+  color: #00f5ff;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(0); opacity: 1;}
+  100% {transform: translateY(-100vh); opacity: 0;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1>✨ Nandu Kutty ✨</h1>
+
+  <button onclick="openMessage()">💌 Open Message</button>
+
+  <div id="messageBox">
+    Nandu Kutty... 💫<br><br>
+
+    You came into my life so unexpectedly, but now you’ve become one of the most beautiful parts of it. 
+    The way you talk, the way you smile, everything about you just feels so special to me.<br><br>
+
+    You’re not just someone I like… you’re someone who makes my heart feel calm and happy at the same time. 
+    Sometimes I smile for no reason, and then I realize… it’s because of you 😊<br><br>
+
+    And honestly… how are you this cute and attractive all the time? 😏<br><br>
+
+    If I ever had to choose again, I would still choose you without thinking twice. 
+    You’re my favorite feeling, my peace, and maybe… something even more than that 💖
+  </div>
+
+  <div id="loveSection">
+    <p>Do you love me? 😏💖</p>
+    <button onclick="yesClicked()">YES 😍</button>
+    <button id="noBtn" onmouseover="moveNo()">NO 😜</button>
+  </div>
+</div>
+
+<script>
+
+function openMessage() {
+  document.getElementById("messageBox").style.display = "block";
+  document.getElementById("loveSection").style.display = "block";
+}
+
+function yesClicked() {
+  alert("I knew it 😏💖");
+}
+
+function moveNo() {
+  let btn = document.getElementById("noBtn");
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 80 + "%";
+  btn.style.top = Math.random() * 80 + "%";
+}
+
+// floating hearts
+setInterval(function() {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💙";
+
+  heart.style.left = Math.random() * 100 + "vw";
+
+  document.body.appendChild(heart);
+
+  setTimeout(function() {
+    heart.remove();
+  }, 5000);
+}, 400);
+
+</script>
+
+</body>
+</html>
